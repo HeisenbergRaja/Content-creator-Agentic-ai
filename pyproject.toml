@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multi-agent-content-creator"
+version = "1.0.0"
+description = "A multi-agent AI system for creating high-quality content with specialized agents"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    {name = "Content Creator Team"}
+]
+license = {text = "MIT"}
+
+dependencies = [
+    "langchain==0.1.20",
+    "langchain-openai==0.1.7",
+    "openai>=1.24.0",
+    "python-dotenv==1.0.0",
+    "requests==2.31.0",
+    "beautifulsoup4==4.12.2",
+    "nltk==3.8.1",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=23.0",
+    "flake8>=6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/multi-agent-content-creator"
+Repository = "https://github.com/yourusername/multi-agent-content-creator.git"
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
